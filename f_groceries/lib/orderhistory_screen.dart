@@ -1,7 +1,7 @@
 import 'package:f_groceries/Cart_Screen.dart';
 import 'package:f_groceries/item_details.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_range_slider/flutter_range_slider.dart';
+import 'package:flutter_range_slider/flutter_range_slider.dart'; // as _RangeSlider;
 
 class Oder_History extends StatefulWidget {
   final String toolbarname;
@@ -129,7 +129,7 @@ class oder_history extends State<Oder_History> {
                   child: Column(children: <Widget>[
                 Container(
                     margin: EdgeInsets.only(left: 5.0, right: 5.0, bottom: 5.0),
-                    color:Colors.black12,
+                    color: Colors.black12,
                     child: Card(
                         elevation: 4.0,
                         child: Container(
@@ -257,7 +257,7 @@ class oder_history extends State<Oder_History> {
                                     Icon(
                                       Icons.location_on,
                                       size: 20.0,
-                                        color: Colors.amber.shade500,
+                                      color: Colors.amber.shade500,
                                     ),
                                     Text(itemList[ind].address,
                                         style: TextStyle(
@@ -270,8 +270,7 @@ class oder_history extends State<Oder_History> {
                                   color: Colors.amber.shade500,
                                 ),
                                 Container(
-                                 child:_status(itemList[ind].cancelOder)
-                                )
+                                    child: _status(itemList[ind].cancelOder))
                               ],
                             ))))),
               ]));
@@ -283,23 +282,34 @@ class oder_history extends State<Oder_History> {
       );
 
   Widget _status(status) {
-    if(status == 'Cancel Order'){
-     return FlatButton.icon(
-          label: Text(status,style: TextStyle(color: Colors.red),),
-          icon: const Icon(Icons.highlight_off, size: 18.0,color: Colors.red,),
+    if (status == 'Cancel Order') {
+      return FlatButton.icon(
+          label: Text(
+            status,
+            style: TextStyle(color: Colors.red),
+          ),
+          icon: const Icon(
+            Icons.highlight_off,
+            size: 18.0,
+            color: Colors.red,
+          ),
           onPressed: () {
             // Perform some action
-          }
-      );
-    }
-    else{
-     return FlatButton.icon(
-          label: Text(status,style: TextStyle(color: Colors.green),),
-          icon: const Icon(Icons.check_circle, size: 18.0,color: Colors.green,),
+          });
+    } else {
+      return FlatButton.icon(
+          label: Text(
+            status,
+            style: TextStyle(color: Colors.green),
+          ),
+          icon: const Icon(
+            Icons.check_circle,
+            size: 18.0,
+            color: Colors.green,
+          ),
           onPressed: () {
             // Perform some action
-          }
-      );
+          });
     }
     if (status == "3") {
       return Text('Process');
@@ -309,7 +319,8 @@ class oder_history extends State<Oder_History> {
       return Text("Waiting");
     }
   }
- erticalD() => Container(
+
+  erticalD() => Container(
         margin: EdgeInsets.only(left: 10.0, right: 0.0, top: 0.0, bottom: 0.0),
       );
 
